@@ -16,6 +16,12 @@ namespace Aug27
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            collectionView.ItemsSource = await App._PetDatabase.GetPetsAsync();
+        }
+
         async void btnBack_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MainPage());

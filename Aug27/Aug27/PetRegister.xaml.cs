@@ -29,6 +29,8 @@ namespace Aug27
                 PetType = species_entered,
                 birthDate = birth_date_entered
             });
+
+            await DisplayAlert("Register Complete", "Pet has been successfully regustered", "OK");
         }
     }
 }
