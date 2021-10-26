@@ -23,7 +23,7 @@ namespace Aug27
             String PassWord = txtPassword.Text;
             Boolean value = false;
             User user = await App.Database.GetItemAsync(userName, PassWord);
-            if (user != null || (userName.Equals("admin") & PassWord.Equals("123")))
+            if (user != null)
             {
                 await DisplayAlert("Login result", "Success", "OK");
                 await Navigation.PushAsync(new MainPage());
