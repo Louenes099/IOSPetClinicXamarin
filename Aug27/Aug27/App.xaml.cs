@@ -21,6 +21,22 @@ namespace Aug27
                 return database;
             }
         }
+
+        static PetDB _petDatabase;
+        public static PetDB _PetDatabase
+        {
+            get
+            {
+                if (_petDatabase == null)
+                {
+                    _petDatabase = new PetDB
+                        (Path.Combine(Environment.GetFolderPath
+                        (Environment.SpecialFolder.LocalApplicationData), "user.db3"));
+                }
+                return _petDatabase;
+            }
+        }
+
         public App()
         {
             InitializeComponent();

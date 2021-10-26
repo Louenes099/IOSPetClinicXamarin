@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aug27.PetDisplay">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding PetID}" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding PetName}" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding PetType}" TextColor="Silver" FontSize="Small"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding birthDate}" TextColor="Silver" FontSize="Small"/>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="btnBack"
+                        Text="Back"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnBack_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

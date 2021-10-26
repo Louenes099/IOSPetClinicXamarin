@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aug27.PetRegister">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label x:Name="pet_register_header" Text="Pet Register Page" FontSize="Header" TextColor="Blue" Margin="10" />
+                <Entry x:Name="pet_name_ent" Placeholder="Enter a name here:" FontSize="Medium" Margin="10" />
+                <Entry x:Name="pet_type_ent" Placeholder="Enter a species here:" FontSize="Medium" Margin="10" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="birth_date_lbl" Text="Enter a Birth Date Here:" FontSize="Medium" TextColor="Blue" Margin="10" Grid.Row="0" Grid.Column="0"/>
+                    <DatePicker x:Name="birth_date_picker" FontSize="Medium" Margin="10" Grid.Row="1" Grid.Column="0" />
+                </Grid>
+                <Button x:Name="submit_to_db_btn" Text="Register New Pet" Margin="10" HorizontalOptions="Center" Clicked="register_btn_clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
