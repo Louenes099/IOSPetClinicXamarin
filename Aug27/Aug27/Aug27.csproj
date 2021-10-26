@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="VetList.xaml.cs">
+      <DependentUpon>VetList.xaml</DependentUpon>
+    </Compile>
     <Compile Update="VetRegister.xaml.cs">
       <DependentUpon>VetRegister.xaml</DependentUpon>
     </Compile>

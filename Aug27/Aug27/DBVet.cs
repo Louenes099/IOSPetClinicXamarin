@@ -8,43 +8,39 @@ using SQLite;
 namespace Aug27
 {
 
-    public class DBUser
+    public class DBVet
     {
-        readonly SQLiteAsyncConnection _database;
-        public DBUser(string dbPath)
+        readonly SQLiteAsyncConnection _databaseVet;
+        public DBVet(string dbPath)
         {
-            _database = new SQLiteAsyncConnection(dbPath);
-            _database.CreateTableAsync<User>().Wait();
+            _databaseVet = new SQLiteAsyncConnection(dbPath);
+            _databaseVet.CreateTableAsync<Vet>().Wait();
         }
-        public Task<List<User>> GetPeopleAsync()
+        public Task<List<Vet>> GetPeopleAsync()
         {
             return
-            _database.Table<User>().ToListAsync();
+            _databaseVet.Table<Vet>().ToListAsync();
         }
-        public Task<int> SavePersonAsync(User
-        user)
+        public Task<int> SavePersonAsync(Vet
+        vet)
         {
-            return _database.InsertAsync(user);
+            return _databaseVet.InsertAsync(vet);
         }
 
-        public Task<int> UpdatePersonAsync(User user)
+        public Task<int> UpdatePersonAsync(Vet vet)
         {
-            if (user.ID != 0)
+            if (vet.ID != 0)
             {
-                return _database.UpdateAsync(user);
+                return _databaseVet.UpdateAsync(vet);
             }
             else
             {
-                return _database.InsertAsync(user);
+                return _databaseVet.InsertAsync(vet);
             }
         }
-        public Task<int> DeleteItemAsync(User user)
+        public Task<int> DeleteItemAsync(Vet vet)
         {
-            return _database.DeleteAsync(user);
-        }
-        public Task<User> GetItemAsync(string username, string password)
-        {
-            return _database.Table<User>().Where(i => i.Name == username && i.Password == password).FirstOrDefaultAsync();
+            return _databaseVet.DeleteAsync(vet);
         }
 
     }
