@@ -21,7 +21,6 @@ namespace Aug27
         {
             String userName = txtUserName.Text;
             String PassWord = txtPassword.Text;
-            Boolean value = false;
             User user = await App.Database.GetItemAsync(userName, PassWord);
             if (user != null)
             {

@@ -34,9 +34,9 @@ namespace Aug27
                 await Navigation.PushAsync(new VetList());
             }
         }
-        async void btnPetList_Clicked(object sender, EventArgs e)
+        async void btnPetDisplay_Clicked(object sender, EventArgs e)
         {
-            var x = await App._PetDatabase.GetPeopleAsync();
+            var x = await App._PetDatabase.GetPetsAsync();
             if (x.Count == 0)
             {
                 await DisplayAlert("Alert", "Databse is empty", "OK");
@@ -46,11 +46,11 @@ namespace Aug27
                 await Navigation.PushAsync(new PetDisplay());
             }
         }
-        async void btnPetRegister_Clicked(object sender, EventArgs e)
+        async void btnPetRegistration_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PetRegister());
         }
-        async void btnVetRegister_Clicked(object sender, EventArgs e)
+        async void btnVetRegistration_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VetRegister());
         }

@@ -4,22 +4,22 @@
              x:Class="Aug27.MainPage">
     <StackLayout>
         <Label Text="List of Registered Users"/>
-        <Button x:Name="btnLogout"
+        <Button x:Name="btnVetRegister"
                         Text="Vet Registration"
                         Font="large"
                         BackgroundColor="LightBlue"
                         Clicked="btnVetRegistration_Clicked"/>
-        <Button x:Name="btnLogout"
+        <Button x:Name="btnVetList"
                         Text="Vet List"
                         Font="large"
                         BackgroundColor="LightBlue"
                         Clicked="btnVetList_Clicked"/>
-        <Button x:Name="btnLogout"
+        <Button x:Name="btnPetRegister"
                         Text="Pet Registration"
                         Font="large"
                         BackgroundColor="LightBlue"
                         Clicked="btnPetRegistration_Clicked"/>
-        <Button x:Name="btnLogout"
+        <Button x:Name="btnPetList"
                         Text="Pet Display"
                         Font="large"
                         BackgroundColor="LightBlue"

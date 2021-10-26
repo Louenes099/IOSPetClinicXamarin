@@ -16,5 +16,9 @@ namespace Aug27
         {
             InitializeComponent();
         }
+        async void btnBack_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 }
