@@ -1,25 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Aug27.Register">
+             x:Class="Aug27.VetRegister">
     <ContentPage.Content>
         <StackLayout Padding="20" VerticalOptions="Center">
             <Label Text="Welcome to Register Page!"
                         FontSize="Large"
                         VerticalOptions="Center"
                         HorizontalOptions="Center" />
-            <Entry x:Name="txtUserName"
-                        Placeholder="Username"
+            <Entry x:Name="txtVetId"
+                        Placeholder="VetId"
                         FontSize="Large"/>
-            <Entry x:Name="txtPassword"
-                        Placeholder="Password"
-                        FontSize="Large"
-                        IsPassword="True"/>
-            <Button x:Name="btnRegister"
-                        Text="Register"
+            <Entry x:Name="txtFirstName"
+                        Placeholder="Firstname"
+                        FontSize="Large"/>
+            <Entry x:Name="txtLastName"
+                        Placeholder="Lastname"
+                        FontSize="Large"/>
+            <Entry x:Name="txtEmail"
+                        Placeholder="Email"
+                        FontSize="Large"/>
+            <Entry x:Name="txtSpecialty"
+                        Placeholder="Specialty"
+                        FontSize="Large"/>
+            <Entry x:Name="txtTelephone"
+                        Placeholder="Telephone"
+                        FontSize="Large"/>
+            <Entry x:Name="txtResume"
+                        Placeholder="Resume"
+                        FontSize="Large"/>
+            <Entry x:Name="txtWorkday"
+                        Placeholder="Workday"
+                        FontSize="Large"/>
+            <Button x:Name="btnVetRegister"
+                        Text="Register Vet"
                         Font="large"
                         BackgroundColor="LightBlue"
-                        Clicked="btnRegister_Clicked"/>
+                        Clicked="btnVetRegister_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -17,16 +17,43 @@ namespace Aug27
 		{
 			InitializeComponent();
         }
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            collectionView.ItemsSource = await App.Database.GetPeopleAsync();
-        }
         async void btnLogout_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Login());
         }
 
+        async void btnVetList_Clicked(object sender, EventArgs e)
+        {
+            var x = await App.DatabaseVet.GetPeopleAsync();
+            if (x.Count == 0)
+            {
+                await DisplayAlert("Alert", "Databse is empty", "OK");
+            }
+            else
+            {
+                await Navigation.PushAsync(new VetList());
+            }
+        }
+        async void btnPetList_Clicked(object sender, EventArgs e)
+        {
+            var x = await App._PetDatabase.GetPeopleAsync();
+            if (x.Count == 0)
+            {
+                await DisplayAlert("Alert", "Databse is empty", "OK");
+            }
+            else
+            {
+                await Navigation.PushAsync(new PetDisplay());
+            }
+        }
+        async void btnPetRegister_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PetRegister());
+        }
+        async void btnVetRegister_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new VetRegister());
+        }
 
 
     }
