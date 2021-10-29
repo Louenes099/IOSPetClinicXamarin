@@ -22,6 +22,10 @@ namespace Aug27
             String userName = txtUserName.Text;
             String PassWord = txtPassword.Text;
             User user = await App.Database.GetItemAsync(userName, PassWord);
+            if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                string action = await DisplayActionSheet("Error", "Cancel", null, "Missing Fields, Please fill out properly.");
+            }
             if (user != null)
             {
                 await DisplayAlert("Login result", "Success", "OK");
