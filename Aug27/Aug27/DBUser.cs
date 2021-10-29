@@ -42,6 +42,11 @@ namespace Aug27
         {
             return _database.DeleteAsync(user);
         }
+
+        public Task<User> GetItemAsync(int id)
+        {
+            return _database.Table<User>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
         public Task<User> GetItemAsync(string username, string password)
         {
             return _database.Table<User>().Where(i => i.Name == username && i.Password == password).FirstOrDefaultAsync();

@@ -30,6 +30,10 @@ namespace Aug27
             {
                 string action = await DisplayActionSheet("Error", "Cancel", null, "Missing Fields, Please fill out properly.");
             }
+            else if (txtUserName.Text == "admin" || txtUserName.Text == "Admin" || txtUserName.Text == "ADMIN")
+            {
+                string action = await DisplayActionSheet("Error", "Cancel", null, "Forbidden, Cannot use reserved username");
+            }
             else
             {
                 await App.Database.SavePersonAsync(new User
@@ -39,7 +43,8 @@ namespace Aug27
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,
                     Email = txtEmail.Text,
-                    PhoneNumber = txtPhone.Text
+                    PhoneNumber = txtPhone.Text,
+                    Role = "viewer"
 
                 });
                 await DisplayAlert("Register Result", "Success", "OK");

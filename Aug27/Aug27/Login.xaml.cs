@@ -16,26 +16,54 @@ namespace Aug27
         public Login()
         {
             InitializeComponent();
+            CreateAdmin();
         }
         private async void btnLogin_Clicked(object sender, EventArgs e)
         {
             String userName = txtUserName.Text;
             String PassWord = txtPassword.Text;
-            User user = await App.Database.GetItemAsync(userName, PassWord);
+            App.User = await App.Database.GetItemAsync(userName, PassWord);
             if (string.IsNullOrWhiteSpace(txtUserName.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 string action = await DisplayActionSheet("Error", "Cancel", null, "Missing Fields, Please fill out properly.");
             }
-            if (user != null)
+            if (App.User != null)
             {
-                await DisplayAlert("Login result", "Success", "OK");
-                await Navigation.PushAsync(new MainPage());
+                if (App.User.Role == "admin")
+                {
+                    await DisplayAlert("Login result", "Success", "OK");
+                    await Navigation.PushAsync(new HomePage());
+                }
+                else
+                {
+                    await DisplayAlert("Login result", "Success", "OK");
+                    await Navigation.PushAsync(new MainPage());
+                }
             }
             else
             {
                 await DisplayAlert("Login result", "Failure", "OK");
             }
         }
+        async void CreateAdmin()
+        {
+            var x = await App.Database.GetPeopleAsync();
+            if (x.Count == 0)
+            {
+                await App.Database.SavePersonAsync(new User
+                {
+                    Name = "admin",
+                    Password = "123",
+                    FirstName = "System",
+                    LastName = "Admin",
+                    Email = "Email",
+                    PhoneNumber = "Phone",
+                    Role = "admin"
+
+                });
+            }
+        }
+
         async void btnGoRegister_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Register());

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aug27.HomePage">
+    <StackLayout>
+        <Label Text="Welcome to PetClinic " FontSize="Large"/>
+        <Image Source="petclinic.jpg"/>
+        <Button x:Name="btnVetRegister"
+                        Text="Vet Registration"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnVetRegistration_Clicked"/>
+        <Button x:Name="btnVetList"
+                        Text="Vet List"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnVetList_Clicked"/>
+        <Button x:Name="btnPetRegister"
+                        Text="Pet Registration"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnPetRegistration_Clicked"/>
+        <Button x:Name="btnPetList"
+                        Text="Pet Display"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnPetDisplay_Clicked"/>
+        <Button x:Name="btnLogout"
+                        Text="Logout"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnLogout_Clicked"/>
+        <Button x:Name="btnUserList"
+                        Text="User List"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnUserList_Clicked"/>
+    </StackLayout>
+</ContentPage>
+    

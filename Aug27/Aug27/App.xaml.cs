@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App1;
+using System;
 using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -9,6 +10,7 @@ namespace Aug27
     {
         static DBUser database;
         static DBVet databaseVet;
+        public static User User { get; set; }
         public static DBUser Database
         {
             get

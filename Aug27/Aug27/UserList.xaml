@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Aug27.UserList">
+        <ScrollView>
+    <StackLayout>
+            <Entry x:Name="txtUserName"
+                        Placeholder="Username"
+                        FontSize="Large"/>
+        <Entry x:Name="txtPassword"
+                        Placeholder="Password"
+                        FontSize="Large"
+                        IsPassword="True"/>
+        <Entry x:Name="txtFirstName"
+                        Placeholder="FirstName"
+                        FontSize="Large"/>
+        <Entry x:Name="txtLastName"
+                        Placeholder="LastName"
+                        FontSize="Large"/>
+        <Entry x:Name="txtEmail"
+                        Placeholder="Email"
+                        FontSize="Large"/>
+        <Entry x:Name="txtPhone"
+                        Placeholder="Phone Number"
+                        FontSize="Large"/>
+        <Label Text="Role:"/>
+        <RadioButton x:Name="viewerEntry" Content="viewer" IsChecked="True"/>
+        <RadioButton x:Name="role1Entry" Content="internal full access"/>
+        <RadioButton x:Name="role2Entry" Content="internal vet register/list access"/>
+        <RadioButton x:Name="role3Entry" Content="internal all list access"/>
+        <RadioButton x:Name="role4Entry" Content="internal pet register/list access"/>
+            <Button Text="Add" Clicked="OnButtonClicked"/>
+            <Button Text="Update" Clicked="Button_Clicked_1"/>
+        <Button Text="Delete" Clicked="Button_Clicked_2"/>
+        <CollectionView  x:Name="collectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontSize="Small"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding FirstName}" TextColor="Silver" FontSize="Small"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding LastName}" TextColor="Silver" FontSize="Small"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Email}" TextColor="Silver" FontSize="Small"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding PhoneNumber}" TextColor="Silver" FontSize="Small"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Role}" TextColor="Silver" FontSize="Small"/>
+                            <Label Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" Text="{Binding ID}"  TextColor="Silver" FontSize="Large"/>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button x:Name="btnBack"
+                        Text="Back"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnBack_Clicked"/>
+    </StackLayout>
+        </ScrollView>
+</ContentPage>
+    
